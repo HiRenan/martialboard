@@ -1,22 +1,21 @@
 import React from "react";
 import styles from "./PodiumCard.module.scss";
-import { Trophy } from "lucide-react";
 
 const podiumData = [
   {
     className: styles.second,
+    trophySvg: "/trophy-silver.svg",
     trophyClass: `${styles.trophyIcon} ${styles.silver}`,
-    trophySize: 40,
   },
   {
     className: styles.first,
+    trophySvg: "/trophy-gold.svg",
     trophyClass: `${styles.trophyIcon} ${styles.gold}`,
-    trophySize: 48,
   },
   {
     className: styles.third,
+    trophySvg: "/trophy-bronze.svg",
     trophyClass: `${styles.trophyIcon} ${styles.bronze}`,
-    trophySize: 40,
   },
 ];
 
@@ -37,7 +36,13 @@ const PodiumCard = ({ podium, onClickStudent }) => {
             tabIndex={0}
             role="button"
           >
-            <Trophy className={podiumInfo.trophyClass} size={podiumInfo.trophySize} />
+            <div className={styles.trophyContainer}>
+              <img 
+                src={podiumInfo.trophySvg} 
+                alt="Troféu" 
+                className={podiumInfo.trophyClass}
+              />
+            </div>
             <div className={styles.avatarWrapper}>
               <img src={student.avatar} alt={student.name} className={styles.avatar} />
             </div>

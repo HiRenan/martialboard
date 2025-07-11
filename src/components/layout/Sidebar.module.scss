@@ -178,6 +178,73 @@
   }
 }
 
+.menuDropdown {
+  position: relative;
+  width: 100%;
+  .menuItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    font: inherit;
+    transition: background 0.2s, color 0.2s;
+    .dropdownArrow {
+      margin-left: auto;
+      font-size: 0.9em;
+      color: $text-secondary;
+      transition: transform 0.3s;
+      user-select: none;
+    }
+    &:hover, &.active {
+      background-color: $background-hover;
+      color: $text-accent;
+      .dropdownArrow {
+        color: $secondary-red;
+        transform: scale(1.2) rotate(-180deg);
+      }
+    }
+    &.active {
+      color: $text-accent;
+      border-left: 3px solid $text-accent;
+      background-color: rgba($secondary-red, 0.08);
+      font-weight: 600;
+    }
+  }
+  .subMenu {
+    background: $background-main;
+    border-radius: 0 0 $border-radius $border-radius;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    margin: 0 0 0 2.5rem;
+    padding: 0.3rem 0.5rem 0.5rem 0.5rem;
+    list-style: none;
+    position: relative;
+    z-index: 10;
+    min-width: 170px;
+    border-left: 2px solid $secondary-red;
+    animation: fadeInUp 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    .subMenuItem {
+      display: block;
+      color: $text-secondary;
+      font-size: 0.97rem;
+      font-weight: 500;
+      padding: 0.6rem 0.7rem;
+      border-radius: $border-radius;
+      margin-bottom: 0.2rem;
+      text-decoration: none;
+      transition: background 0.18s, color 0.18s, font-weight 0.18s;
+      &:hover, &.active {
+        background: $background-hover;
+        color: $secondary-red;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
 @media (max-width: 1024px) {
   .sidebar {
     width: 240px;

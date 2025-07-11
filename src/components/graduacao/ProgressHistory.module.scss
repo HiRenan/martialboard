@@ -1,0 +1,56 @@
+@import '@/styles/variables';
+
+.historyCard {
+  background: $background-card;
+  border-radius: $border-radius-xl;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  padding: 2rem 1.2rem 1.2rem 1.2rem;
+}
+.title {
+  color: $text-primary;
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid $border-primary;
+  font-size: 1.01rem;
+  color: $text-primary;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+.date {
+  color: $text-secondary;
+  font-size: 0.98rem;
+  min-width: 110px;
+  font-weight: 500;
+}
+.desc {
+  flex: 1;
+  color: $text-primary;
+  font-size: 1.01rem;
+}
+
+@media (max-width: 600px) {
+  .historyCard {
+    padding: 1rem 0.3rem 0.7rem 0.3rem;
+  }
+  .date {
+    min-width: 70px;
+    font-size: 0.93rem;
+  }
+  .desc {
+    font-size: 0.95rem;
+  }
+} 
