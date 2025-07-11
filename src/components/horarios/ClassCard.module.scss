@@ -1,0 +1,122 @@
+@import '@/styles/variables';
+
+.classCard {
+  background: $background-main;
+  border: 1px solid $border-primary;
+  border-left: 4px solid;
+  border-radius: $border-radius;
+  padding: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: grab;
+  
+  &:active {
+    cursor: grabbing;
+  }
+  
+  &:hover {
+    border-color: $text-secondary;
+    background: $background-hover;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba($secondary-red, 0.15);
+    
+    .editActions {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.classContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.className {
+  color: $secondary-red;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.classDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.classTime {
+  color: $text-primary;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.professorInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.professorAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: $text-primary;
+  flex-shrink: 0;
+}
+
+.classProfessor {
+  color: $text-secondary;
+  font-size: 0.85rem;
+}
+
+.editActions {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  gap: 0.25rem;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.2s ease;
+}
+
+.editButton,
+.deleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.editButton {
+  background: $background-card;
+  color: $text-secondary;
+  
+  &:hover {
+    background: $secondary-red;
+    color: $text-primary;
+  }
+}
+
+.deleteButton {
+  background: $background-card;
+  color: $text-secondary;
+  
+  &:hover {
+    background: $error-color;
+    color: $text-primary;
+  }
+} 

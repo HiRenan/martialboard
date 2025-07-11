@@ -1,0 +1,173 @@
+@import '@/styles/variables';
+
+@keyframes pulsating-gold-glow {
+  0% { box-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
+  50% { box-shadow: 0 0 18px #FFD700, 0 0 32px #FFD700; }
+  100% { box-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
+}
+
+.podiumWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.podiumCard {
+  background: $background-card;
+  border-radius: $border-radius-xl;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  min-width: 170px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  border: 4px solid transparent;
+  outline: none;
+  transition: transform 0.22s, box-shadow 0.22s, border 0.22s;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+  overflow: visible;
+  margin-top: 2rem;
+  padding-top: 2rem;
+
+  &:hover, &:focus {
+    transform: translateY(-10px) scale(1.045);
+    box-shadow: 0 8px 32px rgba($secondary-red, 0.18);
+    border-color: $secondary-red;
+  }
+}
+
+.first {
+  z-index: 2;
+  min-height: 320px;
+  min-width: 200px;
+  margin-bottom: 0;
+  border-width: 5px;
+  animation: pulsating-gold-glow 2.8s infinite ease-in-out;
+  box-shadow: 0 0 18px #FFD700, 0 0 32px #FFD700;
+}
+.second {
+  z-index: 1;
+  min-height: 220px;
+  min-width: 160px;
+  margin-bottom: -30px;
+  opacity: 0.97;
+}
+.third {
+  z-index: 1;
+  min-height: 200px;
+  min-width: 150px;
+  margin-bottom: -45px;
+  opacity: 0.93;
+}
+
+.podiumEmpty {
+  min-width: 150px;
+  min-height: 180px;
+}
+
+.medalIcon {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.18));
+}
+.avatarWrapper {
+  margin-bottom: 1.2rem;
+  margin-top: 1.5rem;
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid $secondary-red;
+  object-fit: cover;
+  background: $background-main;
+  box-shadow: 0 2px 12px rgba($secondary-red, 0.12);
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 0.7rem;
+  width: 100%;
+  justify-content: center;
+}
+.name {
+  color: $text-primary;
+  font-size: 1.18rem;
+  font-weight: 700;
+  text-align: right;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.points {
+  color: $secondary-red;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-left: 0.7rem;
+  text-align: left;
+  flex: 1;
+}
+.streak {
+  color: #fbbf24;
+  font-size: 1.13rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 700;
+  justify-content: center;
+}
+
+.trophyIcon {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $background-card;
+  padding: 0.5rem;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gold {
+  color: #FFD700;
+}
+.silver {
+  color: #C0C0C0;
+}
+.bronze {
+  color: #CD7F32;
+}
+
+@media (max-width: 900px) {
+  .podiumWrapper {
+    gap: 1.2rem;
+  }
+  .first { min-width: 150px; min-height: 220px; }
+  .second, .third { min-width: 110px; min-height: 140px; }
+  .avatar { width: 60px; height: 60px; }
+}
+@media (max-width: 600px) {
+  .podiumWrapper {
+    gap: 0.5rem;
+  }
+  .first { min-width: 110px; min-height: 140px; }
+  .second, .third { min-width: 80px; min-height: 100px; }
+  .avatar { width: 40px; height: 40px; }
+} 

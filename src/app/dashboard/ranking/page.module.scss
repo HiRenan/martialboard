@@ -1,0 +1,71 @@
+@import '@/styles/variables';
+
+.rankingPageContainer {
+  position: relative;
+  min-height: 100vh;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/patterns/hex-grid.svg');
+    background-size: cover;
+    opacity: 0.07;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.rankingContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem 1rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.tabButton {
+  background: $background-main;
+  color: $text-secondary;
+  border: 2px solid $border-primary;
+  border-radius: $border-radius-lg;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.75rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  
+  &:hover {
+    color: $secondary-red;
+    border-color: $secondary-red;
+    background: $background-hover;
+  }
+  
+  &.active {
+    color: $text-primary;
+    background: $secondary-red;
+    border-color: $secondary-red;
+    box-shadow: 0 2px 16px rgba($secondary-red, 0.15);
+  }
+}
+
+.podiumSection, .podiumContainer {
+  margin-bottom: 3rem;
+}
+
+.listSection, .rankingListContainer {
+  margin-bottom: 2rem;
+} 
