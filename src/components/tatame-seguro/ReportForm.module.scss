@@ -1,0 +1,220 @@
+@import '@/styles/variables';
+
+.reportForm {
+  width: 100%;
+  display: contents;
+}
+
+.categorySection {
+  grid-area: categories;
+  padding-right: 2rem;
+  border-right: 1px solid rgba($border-primary, 0.3);
+  
+  @media (max-width: 900px) {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba($border-primary, 0.3);
+    padding-bottom: 2rem;
+  }
+}
+
+.sectionTitle {
+  color: $text-primary;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.sectionSubtitle {
+  color: $text-secondary;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.categoryTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.categoryTag {
+  padding: 0.75rem 1.25rem;
+  background: $background-main;
+  border: 1.5px solid $border-primary;
+  border-radius: $border-radius;
+  color: $text-secondary;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  &:hover {
+    border-color: $text-secondary;
+    background: $background-hover;
+    color: $text-primary;
+    transform: translateY(-1px);
+  }
+  
+  &.selected {
+    background-color: $secondary-red;
+    border-color: $secondary-red;
+    color: $text-primary;
+    font-weight: 600;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba($secondary-red, 0.3);
+  }
+}
+
+.checkIcon {
+  color: $secondary-red;
+  animation: scaleIn 0.2s ease;
+}
+
+// Separadores removidos - agora usando grid layout
+
+.reportSection {
+  grid-area: report;
+  padding-left: 2rem;
+  
+  @media (max-width: 900px) {
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+}
+
+.reportTextarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 1.25rem;
+  background: $background-main;
+  border: 1.5px solid $border-primary;
+  border-radius: $border-radius;
+  color: $text-primary;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: $font-primary;
+  resize: vertical;
+  transition: all 0.2s ease;
+  
+  &::placeholder {
+    color: $text-secondary;
+    opacity: 0.7;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: $secondary-red;
+    background: $background-hover;
+    box-shadow: 0 0 0 3px rgba($secondary-red, 0.2);
+  }
+}
+
+.characterCount {
+  text-align: right;
+  color: $text-secondary;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  transition: all 0.2s ease;
+  
+  &.active {
+    color: $text-primary;
+    opacity: 1;
+  }
+}
+
+.submitSection {
+  grid-area: submission;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba($border-primary, 0.3);
+  
+  @media (max-width: 900px) {
+    padding-top: 2rem;
+  }
+}
+
+.submitButton {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: $text-primary;
+  border: 2px solid $text-primary;
+  border-radius: $border-radius;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  
+  &:hover:not(:disabled) {
+    background: $text-primary;
+    color: $background-main;
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+  
+  &:disabled {
+    border-color: $border-primary;
+    color: $text-secondary;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.privacyNote {
+  color: $text-secondary;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .categoryTags {
+    flex-direction: column;
+  }
+  
+  .categoryTag {
+    text-align: center;
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 1.25rem 2rem;
+  }
+} 
