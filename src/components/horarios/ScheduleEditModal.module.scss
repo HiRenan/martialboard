@@ -1,0 +1,188 @@
+@import '@/styles/variables';
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modalContent {
+  background: $background-card;
+  border: 1px solid $border-primary;
+  border-radius: $border-radius-lg;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid $border-primary;
+}
+
+.modalTitle {
+  color: $text-primary;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: $background-main;
+  border: 1px solid $border-primary;
+  border-radius: $border-radius;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: $background-hover;
+    color: $text-primary;
+    border-color: $secondary-red;
+  }
+}
+
+.form {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timeGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.label {
+  color: $text-primary;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.input,
+.select {
+  padding: 0.75rem;
+  background: $background-main;
+  border: 1px solid $border-primary;
+  border-radius: $border-radius;
+  color: $text-primary;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  
+  &:focus {
+    outline: none;
+    border-color: $secondary-red;
+    background: $background-hover;
+  }
+  
+  &::placeholder {
+    color: $text-secondary;
+  }
+}
+
+// Estilos específicos para inputs de time
+input[type="time"] {
+  &::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+  }
+  
+  &::-webkit-datetime-edit {
+    color: $text-primary;
+  }
+  
+  &::-webkit-datetime-edit-fields-wrapper {
+    color: $text-primary;
+  }
+  
+  &::-webkit-datetime-edit-text {
+    color: $text-secondary;
+  }
+  
+  &::-webkit-datetime-edit-hour-field,
+  &::-webkit-datetime-edit-minute-field {
+    color: $text-primary;
+  }
+}
+
+.select {
+  cursor: pointer;
+}
+
+.formActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
+.cancelButton,
+.saveButton {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  border-radius: $border-radius;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cancelButton {
+  background: $background-main;
+  color: $text-secondary;
+  border: 1.5px solid $border-primary;
+  
+  &:hover {
+    background: $background-hover;
+    color: $text-primary;
+    border-color: $text-secondary;
+  }
+}
+
+.saveButton {
+  background: $secondary-red;
+  color: $text-primary;
+  border: 1.5px solid $secondary-red;
+  
+  &:hover {
+    background: #c4182a;
+    border-color: #c4182a;
+  }
+} 

@@ -1,0 +1,118 @@
+@import '@/styles/variables';
+
+@keyframes slide-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 48px 48px 1fr 110px 90px 48px;
+  align-items: center;
+  background: $background-card;
+  border-radius: $border-radius-lg $border-radius-lg 0 0;
+  padding: 0.7rem 1.2rem;
+  border-bottom: 1.5px solid $border-primary;
+  cursor: pointer;
+  transition: background 0.18s;
+  outline: none;
+  animation: slide-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.13), transparent);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  &:hover, &:focus {
+    background: $background-hover;
+  }
+  &:hover::after {
+    transform: translateX(200%);
+  }
+}
+
+.position {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $secondary-red;
+  text-align: right;
+}
+
+.avatarWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid $secondary-red;
+  object-fit: cover;
+  background: $background-main;
+}
+
+.name {
+  color: $text-primary;
+  font-size: 1.02rem;
+  font-weight: 600;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.points {
+  color: $secondary-red;
+  font-size: 1.18rem;
+  font-weight: 700;
+  min-width: 80px;
+  text-align: right;
+}
+.streak {
+  color: #fbbf24;
+  font-size: 1.13rem;
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  justify-content: flex-end;
+  font-weight: 700;
+}
+.rankChange {
+  min-width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: 36px 36px 1fr 60px 60px 36px;
+    padding: 0.6rem 0.5rem;
+  }
+  .avatar { width: 28px; height: 28px; }
+}
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 24px 24px 1fr 40px 40px 24px;
+    font-size: 0.93rem;
+    padding: 0.5rem 0.2rem;
+  }
+  .avatar { width: 20px; height: 20px; }
+} 
