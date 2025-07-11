@@ -1,5 +1,7 @@
 "use client";
 import React from 'react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import styles from './Sidebar.module.scss';
 import Logo from '../Logo/Logo';
 import { 
@@ -16,8 +18,10 @@ import {
 } from 'lucide-react';
 
 const Sidebar = ({ isCollapsed }) => {
+  const pathname = usePathname(); // Pega a URL atual
+  
   const menuItems = [
-    { icon: Home, label: 'Dashboard', active: true, href: '/dashboard' },
+    { icon: Home, label: 'Dashboard', href: '/dashboard' },
     { icon: Users, label: 'Alunos', href: '#' },
     { icon: FileText, label: 'Planos', href: '#' },
     { icon: Calendar, label: 'Aulas', href: '#' },
@@ -37,13 +41,13 @@ const Sidebar = ({ isCollapsed }) => {
         <ul className={styles.menuList}>
           {menuItems.map((item, index) => (
             <li key={index}>
-              <a 
+              <Link 
                 href={item.href} 
-                className={`${styles.menuItem} ${item.active ? styles.active : ''}`}
+                className={`${styles.menuItem} ${pathname === item.href ? styles.active : ''}`}
               >
                 <item.icon size={20} />
                 <span className={styles.navLinkText}>{item.label}</span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

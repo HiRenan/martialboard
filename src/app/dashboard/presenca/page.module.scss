@@ -22,7 +22,7 @@
 }
 
 .saveButton {
-  background: $secondary-red;
+  background: $success-color;
   color: $text-primary;
   border: none;
   border-radius: $border-radius;
@@ -33,11 +33,11 @@
   cursor: pointer;
   transition: all 0.2s;
   &:hover {
-    background: darken($secondary-red, 10%);
+    background: darken($success-color, 10%);
     color: $text-primary;
   }
   &:active {
-    background: $secondary-red;
+    background: $success-color;
   }
 }
 
