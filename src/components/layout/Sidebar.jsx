@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import styles from './Sidebar.module.scss';
@@ -14,14 +14,15 @@ import {
   Bell,
   User,
   LogOut,
-  ClipboardCheck,
+  ClipboardList,
   Shield,
   Clock,
   Trophy
 } from 'lucide-react';
 
 const Sidebar = ({ isCollapsed }) => {
-  const pathname = usePathname(); // Pega a URL atual
+  const pathname = usePathname();
+  const [presencaOpen, setPresencaOpen] = useState(false);
 
   const menuItems = [
     { icon: Home, label: 'Dashboard', href: '/dashboard' },
@@ -31,7 +32,7 @@ const Sidebar = ({ isCollapsed }) => {
     { icon: Clock, label: 'Horários', href: '/dashboard/horarios' },
     { icon: Trophy, label: 'Ranking', href: '/dashboard/ranking' },
     { icon: BarChart3, label: 'Relatórios', href: '#' },
-    { icon: ClipboardCheck, label: 'Presença', href: '/dashboard/presenca' },
+    // { icon: ClipboardCheck, label: 'Presença', href: '/dashboard/presenca' },
     { icon: Shield, label: 'Tatame Seguro', href: '/dashboard/tatame-seguro' },
     { icon: Settings, label: 'Configurações', href: '#' },
   ];
@@ -56,6 +57,40 @@ const Sidebar = ({ isCollapsed }) => {
               </Link>
             </li>
           ))}
+          {/* Dropdown Presença */}
+          <li className={styles.menuDropdown}>
+            <button
+              className={`${styles.menuItem} ${pathname.startsWith('/dashboard/presenca') || pathname.startsWith('/dashboard/graduacao') ? styles.active : ''}`}
+              onClick={() => setPresencaOpen((open) => !open)}
+              aria-expanded={presencaOpen}
+              aria-controls="presenca-submenu"
+              type="button"
+            >
+              <ClipboardList size={20} />
+              <span className={styles.navLinkText}>Presença</span>
+              <span className={styles.dropdownArrow}>{presencaOpen ? '▲' : '▼'}</span>
+            </button>
+            {presencaOpen && (
+              <ul className={styles.subMenu} id="presenca-submenu">
+                <li>
+                  <Link
+                    href="/dashboard/presenca"
+                    className={`${styles.subMenuItem} ${pathname === '/dashboard/presenca' ? styles.active : ''}`}
+                  >
+                    Lançar Presença
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/dashboard/graduacao"
+                    className={`${styles.subMenuItem} ${pathname === '/dashboard/graduacao' ? styles.active : ''}`}
+                  >
+                    Minha Graduação
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
         </ul>
       </nav>
 

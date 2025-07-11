@@ -21,8 +21,14 @@ const RankingRow = ({ student, position, onClick, animationDelay = 0 }) => {
       <div className={styles.avatarWrapper}>
         <img src={student.avatar} alt={student.name} className={styles.avatar} />
       </div>
-      <div className={styles.name}>{student.name}</div>
-      <div className={styles.points}>{student.points} pts</div>
+      <div className={styles.studentInfo}>
+        <div className={styles.name}>{student.name}</div>
+        <div className={styles.rank}>{student.rank}</div>
+      </div>
+      <div className={styles.pointsContainer}>
+        <div className={styles.points}>{student.points}</div>
+        <div className={styles.pointsLabel}>pts</div>
+      </div>
       <div className={styles.streak}>
         <Flame size={18} color="#fbbf24" />
         <span>{student.streak}</span>

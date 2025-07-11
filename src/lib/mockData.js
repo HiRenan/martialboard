@@ -313,6 +313,29 @@ export const pointsLog = {
   ],
 };
 
+export const userGraduationProgress = {
+  currentRank: {
+    name: "Faixa Roxa",
+    color: "#805AD5", // Cor roxa para o visual
+  },
+  nextRank: {
+    name: "Faixa Marrom",
+    color: "#7B341E", // Cor marrom para o visual
+  },
+  progress: {
+    currentClasses: 112,
+    requiredClasses: 200, // Total de aulas para a próxima faixa
+  },
+  mainGoal: "Aprender Defesa Pessoal", // Objetivo principal do aluno
+  history: [
+    { date: "2025-07-10", description: "Presença - Treino das 19h" },
+    { date: "2025-07-08", description: "Presença - Treino das 19h" },
+    { date: "2025-07-07", description: "Presença - Treino No-Gi" },
+    { date: "2025-07-05", description: "Presença - Open Mat" },
+    // ... mais entradas de histórico
+  ],
+};
+
 export const classesToday = [
   {
     id: "jiujitsu-19",

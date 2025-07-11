@@ -1,0 +1,25 @@
+@import '@/styles/variables';
+
+.graduacaoPageContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 3rem 1rem;
+  position: relative;
+  min-height: 100vh;
+}
+
+.title {
+  color: $text-primary;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.progressSection {
+  margin-bottom: 2.5rem;
+}
+
+.historySection {
+  margin-top: 2.5rem;
+} 

@@ -6,6 +6,12 @@
   100% { box-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
 }
 
+@keyframes trophy-shine {
+  0% { filter: brightness(1) drop-shadow(0 2px 8px rgba(0,0,0,0.18)); }
+  50% { filter: brightness(1.2) drop-shadow(0 4px 16px rgba(255,215,0,0.4)); }
+  100% { filter: brightness(1) drop-shadow(0 2px 8px rgba(0,0,0,0.18)); }
+}
+
 .podiumWrapper {
   display: flex;
   justify-content: center;
@@ -69,17 +75,51 @@
   min-height: 180px;
 }
 
-.medalIcon {
+.trophyContainer {
   position: absolute;
-  top: -28px;
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.18));
+  background-color: $background-card;
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
+
+.trophyIcon {
+  width: 40px;
+  height: 50px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.18));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gold {
+  animation: trophy-shine 3s infinite ease-in-out;
+  
+  &:hover {
+    transform: scale(1.1);
+    filter: brightness(1.3) drop-shadow(0 6px 20px rgba(255,215,0,0.6));
+  }
+}
+
+.silver {
+  &:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2) drop-shadow(0 4px 12px rgba(192,192,192,0.4));
+  }
+}
+
+.bronze {
+  &:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2) drop-shadow(0 4px 12px rgba(205,127,50,0.4));
+  }
+}
+
 .avatarWrapper {
   margin-bottom: 1.2rem;
   margin-top: 1.5rem;
@@ -131,30 +171,6 @@
   justify-content: center;
 }
 
-.trophyIcon {
-  position: absolute;
-  top: -24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: $background-card;
-  padding: 0.5rem;
-  border-radius: 50%;
-  z-index: 3;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.gold {
-  color: #FFD700;
-}
-.silver {
-  color: #C0C0C0;
-}
-.bronze {
-  color: #CD7F32;
-}
-
 @media (max-width: 900px) {
   .podiumWrapper {
     gap: 1.2rem;
@@ -162,6 +178,8 @@
   .first { min-width: 150px; min-height: 220px; }
   .second, .third { min-width: 110px; min-height: 140px; }
   .avatar { width: 60px; height: 60px; }
+  .trophyIcon { width: 32px; height: 40px; }
+  .trophyContainer { top: -25px; }
 }
 @media (max-width: 600px) {
   .podiumWrapper {
@@ -170,4 +188,6 @@
   .first { min-width: 110px; min-height: 140px; }
   .second, .third { min-width: 80px; min-height: 100px; }
   .avatar { width: 40px; height: 40px; }
+  .trophyIcon { width: 28px; height: 35px; }
+  .trophyContainer { top: -20px; padding: 0.3rem; }
 } 
