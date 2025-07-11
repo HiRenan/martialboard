@@ -1,0 +1,131 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.pageContainer {
+  display: flex;
+  min-height: 100vh;
+  background-color: #F9F9F9;
+}
+
+.formSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  min-height: 100vh;
+  padding: 2rem;
+  animation: $animation-slide-in-left;
+}
+
+.imageSection {
+  width: 50%;
+  background-image: url('https://images.unsplash.com/photo-1593787416399-73891bac597c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  animation: $animation-slide-in-right;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(26, 32, 44, 0.7);
+    animation: kenburns 15s ease-out infinite alternate;
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26, 32, 44, 0.8) 0%, rgba(26, 32, 44, 0.6) 100%);
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 2;
+    @include flex-center;
+    flex-direction: column;
+    height: 100%;
+    padding: 3rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .slogan {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.5s both;
+    letter-spacing: -0.025em;
+  }
+  
+  .subtitle {
+    font-size: 1.125rem;
+    font-weight: 400;
+    opacity: 0.9;
+    max-width: 400px;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.7s both;
+    letter-spacing: 0.01em;
+  }
+}
+
+// Keyframes de animação
+@keyframes kenburns {
+  0% { transform: scale(1.0) translate(0, 0); }
+  100% { transform: scale(1.1) translate(-2%, 2%); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsividade para mobile
+@media (max-width: 1024px) {
+  .pageContainer {
+    flex-direction: column-reverse;
+  }
+  .formSection {
+    width: 100%;
+    min-height: auto;
+    padding: 1rem;
+  }
+  .imageSection {
+    width: 100%;
+    min-height: 300px;
+    
+    .slogan {
+      font-size: 2rem;
+    }
+    
+    .subtitle {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .imageSection {
+    min-height: 250px;
+    
+    .slogan {
+      font-size: 1.75rem;
+    }
+    
+    .subtitle {
+      font-size: 0.9rem;
+    }
+  }
+} 

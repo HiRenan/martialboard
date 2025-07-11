@@ -1,0 +1,94 @@
+@import '@/styles/variables';
+
+.chartCard {
+  background-color: $background-card;
+  border-radius: $border-radius;
+  padding: 1.5rem;
+  box-shadow: none;
+  border: 1px solid $border-primary;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $background-hover;
+    border-color: $secondary-red;
+    transform: translateY(-4px);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: $text-secondary;
+  margin: 0.25rem 0 0 0;
+}
+
+.chartContainer {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: $text-secondary;
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  font-weight: 500;
+}
+
+.legendValue {
+  color: $text-primary;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .chartCard {
+    padding: 1.25rem;
+  }
+  .chartContainer {
+    height: 200px;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  .legend {
+    gap: 0.75rem;
+  }
+  .legendItem {
+    font-size: 0.8rem;
+  }
+} 

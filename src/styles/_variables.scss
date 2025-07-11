@@ -1,0 +1,48 @@
+// Cores Primárias
+$primary-dark: #181d2e;
+$secondary-red: #e41e34;
+
+// Cores de Texto
+$text-primary: #ffffff;
+$text-secondary: #a0aec0;
+$text-accent: $secondary-red;
+
+// Cores de Backgrounds e Cards
+$background-main: $primary-dark;
+$background-card: #24293d; // Um tom mais claro do azul escuro para os cards
+$background-hover: #2e3447; // Um tom ainda mais claro para hovers
+
+// Cores de Borda
+$border-primary: #374151;
+
+// Cores de Sucesso e Alerta
+$success-color: #48bb78;
+$error-color: #e53e3e;
+
+// Outras Variáveis
+$border-radius: 0.5rem;
+$disabled-gray: #3b475c;
+
+// Fonte
+$font-primary: 'Inter', sans-serif;
+
+// Medidas
+$border-radius: 0.5rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+
+// Animações
+$animation-slide-in-left: slide-in-left 0.6s ease-out;
+$animation-slide-in-right: slide-in-right 0.6s ease-out;
+$animation-fade-in-up: fadeInUp 0.8s ease-out;
+
+// Sombras
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+
+// Efeitos Glassmorphism
+$glassmorphism-bg: rgba(45, 55, 72, 0.7);
+$glassmorphism-border: rgba(74, 85, 104, 0.5);
+$glassmorphism-blur: blur(10px); 

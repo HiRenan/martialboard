@@ -1,0 +1,185 @@
+@import '@/styles/variables';
+
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  background-color: $background-card;
+  border-right: 1px solid $border-primary;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  box-shadow: none;
+  transition: width 0.3s ease;
+
+  &.collapsed {
+    width: 80px;
+    .navLinkText,
+    .userName,
+    .userRole,
+    .brandName {
+      display: none;
+    }
+    .logoSection {
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .userSection {
+      padding: 1rem 0.5rem;
+    }
+    .userInfo {
+      justify-content: center;
+    }
+    .userActions {
+      justify-content: center;
+    }
+  }
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid $border-primary;
+  .brandName {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin: 0;
+  }
+}
+
+.navigation {
+  flex: 1;
+  padding: 1.5rem 0;
+}
+
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.5rem;
+  color: $text-primary;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  background: none;
+
+  &:hover {
+    background-color: $background-hover;
+    color: $text-accent;
+  }
+
+  &.active {
+    color: $text-accent;
+    border-left: 3px solid $text-accent;
+    background-color: rgba($secondary-red, 0.08);
+    font-weight: 600;
+  }
+  .navLinkText {
+    font-size: 0.95rem;
+  }
+}
+
+.userSection {
+  padding: 1.5rem;
+  border-top: 1px solid $border-primary;
+  background-color: $background-card;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  background-color: $secondary-red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 0 10px rgba($secondary-red, 0.15);
+}
+
+.userDetails {
+  flex: 1;
+  .userName {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0 0 0.25rem 0;
+  }
+  .userRole {
+    font-size: 0.8rem;
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+.userActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionButton {
+  width: 36px;
+  height: 36px;
+  background-color: $background-hover;
+  border: 1px solid $border-primary;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $secondary-red;
+    color: white;
+    border-color: $secondary-red;
+    box-shadow: 0 0 10px rgba($secondary-red, 0.15);
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+    &.collapsed {
+      width: 70px;
+    }
+  }
+  .brandName {
+    font-size: 1.1rem;
+  }
+  .menuItem {
+    padding: 0.75rem 1.25rem;
+    .navLinkText {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease, width 0.3s ease;
+    &.open {
+      transform: translateX(0);
+    }
+  }
+} 

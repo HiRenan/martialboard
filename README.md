@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MartialBoard Login
 
-## Getting Started
+Uma tela de login moderna e responsiva para a plataforma MartialBoard, um SaaS para academias de artes marciais.
 
-First, run the development server:
+## 🚀 Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 15** - Framework React com App Router
+- **SASS/SCSS** - Pré-processador CSS com CSS Modules
+- **Lucide React** - Biblioteca de ícones
+- **Inter Font** - Fonte do Google Fonts
+
+## 🎨 Design
+
+O design equilibra a seriedade e disciplina das artes marciais com uma interface limpa e profissional:
+
+- **Cores**: Vermelho marcial (#E53E3E) como cor principal
+- **Layout**: Divisão em duas seções (formulário e imagem)
+- **Responsividade**: Adaptação completa para mobile
+- **Animações**: Transições suaves e efeitos de entrada
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── app/
+│   ├── login/
+│   │   ├── page.jsx          # Página de login
+│   │   └── page.module.scss  # Estilos da página
+│   ├── layout.js             # Layout principal
+│   └── page.jsx              # Redirecionamento para login
+├── components/
+│   ├── Logo/
+│   │   ├── Logo.jsx          # Componente do logo
+│   │   └── Logo.module.scss  # Estilos do logo
+│   └── LoginForm/
+│       ├── LoginForm.jsx     # Formulário de login
+│       └── LoginForm.module.scss # Estilos do formulário
+└── styles/
+    ├── _variables.scss       # Variáveis SASS
+    ├── _mixins.scss          # Mixins SASS
+    ├── _base.scss            # Estilos base
+    └── main.scss             # Arquivo principal SASS
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Funcionalidades
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Formulário de Login**: Campos para email e senha
+- **Validação**: Campos obrigatórios e validação de email
+- **Mostrar/Ocultar Senha**: Botão para alternar visibilidade da senha
+- **Estado de Loading**: Simulação de autenticação
+- **Responsividade**: Layout adaptativo para diferentes tamanhos de tela
+- **Animações**: Efeitos de entrada suaves
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Como Executar
 
-## Learn More
+1. **Instalar dependências**:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Executar em desenvolvimento**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+3. **Acessar a aplicação**:
+   Abra [http://localhost:3000](http://localhost:3000) no seu navegador
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📱 Responsividade
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Desktop**: Layout dividido em duas colunas (formulário + imagem)
+- **Mobile**: Layout em coluna única com imagem no topo
+
+## 🎯 Componentes
+
+### Logo
+
+- Círculo vermelho com a letra "M!"
+- Sombra sutil para profundidade
+
+### LoginForm
+
+- Campos de input com ícones
+- Botão de mostrar/ocultar senha
+- Link "Esqueceu a senha?"
+- Botão de submit com estado de loading
+
+## 🎨 Paleta de Cores
+
+- **Vermelho Marcial**: #E53E3E
+- **Escuro**: #1A202C
+- **Claro**: #F7FAFC
+- **Cinzas**: #EDF2F7, #E2E8F0, #CBD5E0, #A0AEC0, #718096, #4A5568
+
+## 📝 Scripts Disponíveis
+
+- `npm run dev` - Executa o servidor de desenvolvimento
+- `npm run build` - Gera a build de produção
+- `npm run start` - Executa a aplicação em produção
+- `npm run lint` - Executa o linter
+
+## 🔧 Configuração
+
+O projeto está configurado com:
+
+- **ESLint** para linting
+- **SASS** para estilização
+- **App Router** do Next.js
+- **CSS Modules** para escopo de estilos
+
+## 📄 Licença
+
+Este projeto foi criado para fins educacionais e de demonstração.

@@ -1,0 +1,96 @@
+@import '@/styles/variables';
+
+.card {
+  background-color: $background-card;
+  border-radius: $border-radius;
+  padding: 1.5rem;
+  box-shadow: none;
+  border: 1px solid $border-primary;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    background-color: $background-hover;
+    border-color: $secondary-red;
+    transform: translateY(-4px);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $secondary-red;
+  background: rgba($secondary-red, 0.08);
+  font-size: 1.25rem;
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin: 0 0 0.5rem 0;
+  line-height: 1;
+}
+
+.change {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $text-secondary;
+  .changeValue {
+    font-weight: 600;
+    &.positive {
+      color: $success-color;
+    }
+    &.negative {
+      color: $error-color;
+    }
+  }
+  .changeLabel {
+    color: $text-secondary;
+  }
+  svg {
+    &.positive {
+      color: $success-color;
+    }
+    &.negative {
+      color: $error-color;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1.25rem;
+  }
+  .value {
+    font-size: 1.75rem;
+  }
+  .icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+} 

@@ -1,0 +1,346 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  background-color: $background-card;
+  color: $text-primary;
+  border-radius: $border-radius;
+  box-shadow: none;
+  border: 1px solid $border-primary;
+  padding: 2rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.formHeader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.formMain {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  text-align: left;
+}
+
+.subtitle {
+  color: $text-secondary;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.inputGroup {
+  position: relative;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+  
+  .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    color: $text-secondary;
+    transition: color 0.3s ease;
+    z-index: 2;
+  }
+  
+  input {
+    width: 100%;
+    height: 3.5rem;
+    border: none;
+    border-bottom: 2px solid $border-primary;
+    border-radius: 0;
+    padding-left: 2rem;
+    padding-right: 3rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    
+    &::placeholder {
+      color: $text-secondary;
+      font-weight: 400;
+    }
+    
+    &:focus {
+      outline: none;
+      border-bottom-color: $secondary-red;
+      background-color: rgba($secondary-red, 0.04);
+    }
+    
+    &:focus + .icon {
+      color: $secondary-red;
+    }
+    
+    &:disabled {
+      background-color: $disabled-gray;
+      border-color: $border-primary;
+      color: $text-secondary;
+      opacity: 0.7;
+    }
+  }
+  
+  &:focus-within {
+    .icon {
+      color: $secondary-red;
+    }
+  }
+}
+
+.eyeIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $text-secondary;
+  transition: color 0.3s ease;
+  z-index: 2;
+  
+  &:hover { 
+    color: $text-accent; 
+  }
+}
+
+.forgotPassword {
+  align-self: flex-end;
+  font-size: 0.875rem;
+  color: $secondary-red;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+  
+  &:hover { 
+    text-decoration: underline;
+    color: $text-primary;
+  }
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 3.5rem;
+  background-color: $secondary-red;
+  color: $text-primary;
+  border: none;
+  border-radius: $border-radius;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+  box-shadow: none;
+  
+  &:hover { 
+    background-color: darken($secondary-red, 10%);
+    transform: translateY(-2px);
+    box-shadow: $shadow-xl;
+  }
+  
+  &:active { 
+    transform: translateY(0);
+  }
+  
+  &:disabled { 
+    background-color: $border-primary;
+    color: $text-secondary;
+    opacity: 0.7;
+    transform: none;
+    box-shadow: $shadow-sm;
+  }
+}
+
+.formFooter {
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out 0.7s both;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: $text-secondary;
+  margin: 1.5rem 0;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid $border-primary;
+  }
+
+  &:not(:empty)::before {
+    margin-right: .75em;
+  }
+
+  &:not(:empty)::after {
+    margin-left: .75em;
+  }
+
+  span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+}
+
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: fadeInUp 0.8s ease-out 0.9s both;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  height: 3.25rem;
+  background-color: $background-main;
+  color: $text-secondary;
+  border: 1.5px solid $border-primary;
+  border-radius: $border-radius;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: $shadow-sm;
+
+  // Garante que qualquer texto/ícone fique visível
+  * {
+    color: $text-secondary !important;
+    fill: $text-secondary !important;
+  }
+
+  &:hover, &:focus {
+    background-color: $secondary-red;
+    border-color: $secondary-red;
+    color: $text-primary;
+    * {
+      color: $text-primary !important;
+      fill: $text-primary !important;
+    }
+  }
+
+  &:disabled, &[aria-disabled='true'] {
+    background-color: $background-card;
+    color: $border-primary;
+    opacity: 0.6;
+    cursor: not-allowed;
+    * {
+      color: $border-primary !important;
+      fill: $border-primary !important;
+    }
+  }
+}
+
+.socialIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.signupText {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: $text-secondary;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.signupLink {
+  color: $secondary-red;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: $text-primary;
+    text-decoration: underline;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .formContainer {
+    max-width: 100%;
+    padding: 1.5rem;
+    margin: 0 1rem;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .formMain {
+    flex: none;
+    margin: 2rem 0;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .form {
+    gap: 1.25rem;
+  }
+} 
+
+// 2. Correção do input desabilitado
+.inputGroup input:disabled {
+  background-color: $disabled-gray !important;
+  border-color: $border-primary !important;
+  color: $text-secondary !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+} 

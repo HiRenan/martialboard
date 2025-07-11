@@ -1,0 +1,72 @@
+@import '@/styles/variables';
+
+.dashboardContainer {
+  min-height: 100vh;
+  background-color: $background-main;
+}
+
+.welcomeSection {
+  margin-bottom: 2rem;
+}
+
+.welcomeTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin: 0 0 0.5rem 0;
+}
+
+.welcomeSubtitle {
+  font-size: 1.125rem;
+  color: $text-secondary;
+  margin: 0;
+  font-weight: 400;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chartsSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.graduationsSection {
+  grid-column: 1 / -1;
+}
+
+// Responsividade
+@media (max-width: 1200px) {
+  .chartsSection {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardContainer {
+    padding: 1rem;
+  }
+  
+  .welcomeTitle {
+    font-size: 1.75rem;
+  }
+  
+  .welcomeSubtitle {
+    font-size: 1rem;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .chartsSection {
+    gap: 1rem;
+  }
+} 

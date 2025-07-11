@@ -1,0 +1,124 @@
+@import '@/styles/variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background-color: $background-card;
+  border-bottom: 1px solid $border-primary;
+  box-shadow: none;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menuButton {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $background-hover;
+    color: $text-accent;
+  }
+}
+
+.pageTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin: 0;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.primaryButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: $secondary-red;
+  color: white;
+  border: none;
+  border-radius: $border-radius;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: darken($secondary-red, 10%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba($secondary-red, 0.15);
+  }
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.notificationButton {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $background-hover;
+    color: $text-accent;
+  }
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 18px;
+  height: 18px;
+  background-color: $secondary-red;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $background-card;
+  box-shadow: 0 0 8px rgba($secondary-red, 0.15);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+  .pageTitle {
+    font-size: 1.25rem;
+  }
+  .primaryButton {
+    padding: 0.625rem 1rem;
+    font-size: 0.85rem;
+    span {
+      display: none;
+    }
+  }
+} 

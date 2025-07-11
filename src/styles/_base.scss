@@ -1,0 +1,45 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $background-main;
+  color: $text-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+input, button {
+  font: inherit;
+}
+
+// Melhorias de acessibilidade
+:focus {
+  outline: 2px solid $secondary-red;
+  outline-offset: 2px;
+}
+
+// Scrollbar personalizada para tema dark
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background-card;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border-primary;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $text-secondary;
+} 
