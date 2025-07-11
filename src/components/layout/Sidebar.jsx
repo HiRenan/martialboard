@@ -14,7 +14,8 @@ import {
   Bell,
   User,
   LogOut,
-  ClipboardCheck
+  ClipboardCheck,
+  Shield
 } from 'lucide-react';
 
 const Sidebar = ({ isCollapsed }) => {
@@ -27,6 +28,7 @@ const Sidebar = ({ isCollapsed }) => {
     { icon: Calendar, label: 'Aulas', href: '#' },
     { icon: BarChart3, label: 'Relatórios', href: '#' },
     { icon: ClipboardCheck, label: 'Presença', href: '/dashboard/presenca' },
+    { icon: Shield, label: 'Tatame Seguro', href: '/dashboard/tatame-seguro' },
     { icon: Settings, label: 'Configurações', href: '#' },
   ];
 
