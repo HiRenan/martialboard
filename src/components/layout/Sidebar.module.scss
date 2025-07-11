@@ -28,12 +28,14 @@
     }
     .userSection {
       padding: 1rem 0.5rem;
+      gap: 0.75rem; // Ajusta o gap para o estado collapsed
     }
     .userInfo {
       justify-content: center;
     }
     .userActions {
       justify-content: center;
+      gap: 0.5rem; // Reduz o gap no estado collapsed
     }
   }
 }
@@ -95,18 +97,27 @@
   padding: 1.5rem;
   border-top: 1px solid $border-primary;
   background-color: $background-card;
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Centraliza TUDO horizontalmente
+  justify-content: center;
+  height: 140px;
+  gap: 1rem; // Espaço entre o bloco de cima e os botões de baixo
 }
 
 .userInfo {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: center; // Centraliza avatar e texto na horizontal
   gap: 0.75rem;
-  margin-bottom: 1rem;
+  width: auto;
+  height: auto;
+  justify-content: center; // Centraliza o conteúdo
 }
 
 .userAvatar {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background-color: $secondary-red;
   border-radius: 50%;
   display: flex;
@@ -114,26 +125,37 @@
   justify-content: center;
   color: white;
   box-shadow: 0 0 10px rgba($secondary-red, 0.15);
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .userDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 36px;
   flex: 1;
-  .userName {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: $text-primary;
-    margin: 0 0 0.25rem 0;
-  }
-  .userRole {
-    font-size: 0.8rem;
-    color: $text-secondary;
-    margin: 0;
-  }
+}
+
+.userName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin: 0 0 0.15rem 0;
+}
+
+.userRole {
+  font-size: 0.8rem;
+  color: $text-secondary;
+  margin: 0;
 }
 
 .userActions {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem; // Aumentado de 0.5rem para 0.75rem
+  margin-top: 1rem; // Adiciona espaço acima dos botões
+  justify-content: center; // Centraliza os botões
 }
 
 .actionButton {

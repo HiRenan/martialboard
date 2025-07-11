@@ -1,0 +1,139 @@
+@import '@/styles/variables';
+
+.attendanceListContainer {
+  margin-top: 2rem;
+  background: $background-card;
+  border-radius: $border-radius;
+  border: 1px solid $border-primary;
+  padding: 2rem 1.5rem;
+  box-shadow: none;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.massButton {
+  background: $background-main;
+  color: $text-secondary;
+  border: 1.5px solid $border-primary;
+  border-radius: $border-radius;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    background: $secondary-red;
+    color: $text-primary;
+    border-color: $secondary-red;
+  }
+}
+
+.studentList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.studentCard {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid $border-primary;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: $background-hover;
+  border: 2px solid $border-primary;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  color: $text-primary;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rank {
+  color: $text-secondary;
+  font-size: 0.95rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.statusButton {
+  padding: 0.5rem 1.1rem;
+  border-radius: $border-radius;
+  border: 1.5px solid $border-primary;
+  background: $background-main;
+  color: $text-secondary;
+  font-weight: 500;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover:not(:disabled) {
+    background: $background-hover;
+    color: $text-accent;
+    border-color: $secondary-red;
+  }
+  &.present {
+    background: $success-color;
+    color: #fff;
+    border-color: $success-color;
+  }
+  &.absent {
+    background: $error-color;
+    color: #fff;
+    border-color: $error-color;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: 600px) {
+  .attendanceListContainer {
+    padding: 1rem 0.5rem;
+  }
+  .studentCard {
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+  }
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+  .name {
+    font-size: 0.95rem;
+  }
+  .rank {
+    font-size: 0.85rem;
+  }
+  .statusButton {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.9rem;
+  }
+} 

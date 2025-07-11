@@ -41,6 +41,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  padding: 0.5rem;
 }
 
 .legend {
@@ -73,6 +75,37 @@
 .legendValue {
   color: $text-primary;
   font-weight: 600;
+}
+
+.customLegendContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.legendColorBox {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.legendLabel {
+  color: $text-secondary;
+}
+
+.legendPercentage {
+  color: $text-primary;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {

@@ -7,10 +7,12 @@ const Header = ({ title = "Dashboard", onMenuClick }) => {
   return (
     <header className={styles.header}>
       <div className={styles.leftSection}>
-        <button className={styles.menuButton} onClick={onMenuClick}>
-          <Menu size={24} />
-        </button>
-        <h1 className={styles.pageTitle}>{title}</h1>
+        <div className={styles.titleContainer}>
+          <button className={styles.menuButton} onClick={onMenuClick}>
+            <Menu size={28} />
+          </button>
+          <h1 className={styles.pageTitle}>{title}</h1>
+        </div>
       </div>
       
       <div className={styles.rightSection}>
