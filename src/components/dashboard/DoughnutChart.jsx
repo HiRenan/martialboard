@@ -50,7 +50,7 @@ const DoughnutChart = ({ data, title, subtitle }) => {
           cutout: '60%',
           plugins: {
             legend: {
-              display: false
+              display: false // ESTA LINHA DESATIVA A LEGENDA PADRÃO
             },
             tooltip: {
               backgroundColor: 'rgba(45, 55, 72, 0.95)',
@@ -98,28 +98,24 @@ const DoughnutChart = ({ data, title, subtitle }) => {
       <div className={styles.chartContainer}>
         <canvas ref={chartRef} />
       </div>
-      
-      <div className={styles.legend}>
+      {/* Legenda customizada responsiva */}
+      <div className={styles.customLegendContainer}>
         {data.labels.map((label, index) => {
           const value = data.data[index];
+          const total = data.data.reduce((a, b) => a + b, 0);
           const percentage = ((value / total) * 100).toFixed(1);
-          
+          const color = [
+            'rgba(229, 62, 62, 0.8)',
+            'rgba(72, 187, 120, 0.8)',
+            'rgba(237, 137, 54, 0.8)',
+            'rgba(102, 126, 234, 0.8)',
+            'rgba(159, 122, 234, 0.8)'
+          ][index];
           return (
-            <div key={index} className={styles.legendItem}>
-              <div 
-                className={styles.legendColor}
-                style={{
-                  backgroundColor: [
-                    'rgba(229, 62, 62, 0.8)',
-                    'rgba(72, 187, 120, 0.8)',
-                    'rgba(237, 137, 54, 0.8)',
-                    'rgba(102, 126, 234, 0.8)',
-                    'rgba(159, 122, 234, 0.8)'
-                  ][index]
-                }}
-              />
+            <div key={label} className={styles.legendItem}>
+              <span className={styles.legendColorBox} style={{ backgroundColor: color }}></span>
               <span className={styles.legendLabel}>{label}</span>
-              <span className={styles.legendValue}>{percentage}%</span>
+              <span className={styles.legendPercentage}>{percentage}%</span>
             </div>
           );
         })}

@@ -11,17 +11,19 @@ import {
   Settings, 
   Bell,
   User,
-  LogOut
+  LogOut,
+  ClipboardCheck
 } from 'lucide-react';
 
-const Sidebar = ({ isCollapsed = false }) => {
+const Sidebar = ({ isCollapsed }) => {
   const menuItems = [
-    { icon: Home, label: 'Dashboard', active: true },
-    { icon: Users, label: 'Alunos' },
-    { icon: FileText, label: 'Planos' },
-    { icon: Calendar, label: 'Aulas' },
-    { icon: BarChart3, label: 'Relatórios' },
-    { icon: Settings, label: 'Configurações' },
+    { icon: Home, label: 'Dashboard', active: true, href: '/dashboard' },
+    { icon: Users, label: 'Alunos', href: '#' },
+    { icon: FileText, label: 'Planos', href: '#' },
+    { icon: Calendar, label: 'Aulas', href: '#' },
+    { icon: BarChart3, label: 'Relatórios', href: '#' },
+    { icon: ClipboardCheck, label: 'Presença', href: '/dashboard/presenca' },
+    { icon: Settings, label: 'Configurações', href: '#' },
   ];
 
   return (
@@ -36,7 +38,7 @@ const Sidebar = ({ isCollapsed = false }) => {
           {menuItems.map((item, index) => (
             <li key={index}>
               <a 
-                href="#" 
+                href={item.href} 
                 className={`${styles.menuItem} ${item.active ? styles.active : ''}`}
               >
                 <item.icon size={20} />

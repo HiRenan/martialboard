@@ -13,6 +13,7 @@
   flex-direction: column;
   min-height: 100vh;
   transition: margin-left 0.3s ease;
+  overflow-x: hidden;
   &.expanded {
     margin-left: 80px;
   }
@@ -22,6 +23,7 @@
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 @media (max-width: 1024px) {

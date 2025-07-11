@@ -6,8 +6,7 @@ import Header from '../../components/layout/Header';
 
 export default function DashboardLayout({ children }) {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
-  
-  const toggleSidebar = () => setIsSidebarCollapsed(!isSidebarCollapsed);
+  const toggleSidebar = () => setIsSidebarCollapsed((prev) => !prev);
 
   return (
     <div className={styles.layoutContainer}>
